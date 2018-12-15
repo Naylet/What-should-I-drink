@@ -33,8 +33,7 @@ rule "Do you sleep in double-wide?YES"
 	when 
 		question: Question(content == "Do you sleep in double-wide?", answer == Answer.YES);
 	then 
-		//question.setResult("Country Club Malt Liquor");
-		//Country Club Malt Liquor
+		question.setResult(new String[] {"Country Club Malt Liquor"});
 end
 
 
@@ -51,7 +50,7 @@ rule "Are you Bob or Doug McKenzie?YES"
 	when 
 		question: Question(content == "Are you Bob or Doug McKenzie?", answer == Answer.YES);
 	then 
-		//Elsinore
+		question.setResult(new String[] {"Elsinore"});
 end
 
 
@@ -68,7 +67,7 @@ rule "Do you live in the projects?YES"
 	when 
 		question: Question(content == "Do you live in the projects?", answer == Answer.YES);
 	then 
-		//Steel Reserve
+		question.setResult(new String[] {"Steel Reserve"});
 end
 
 
@@ -81,7 +80,315 @@ rule "Do you live in the projects?NO"
 		insert(newquestion);
 end
 
-//DONE BY NOW
+rule "Are you a hockey fan eh?YES"
+	when 
+		question: Question(content == "Are you a hockey fan eh?", answer == Answer.YES);
+	then 
+		question.setResult(new String[] {"Molson", "Blue"});
+end
+
+
+rule "Are you a hockey fan eh?NO"
+	when 
+		question: Question(content == "Are you a hockey fan eh?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Do you know how to access the Stargate?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Do you know how to access the Stargate?YES"
+	when 
+		question: Question(content == "Do you know how to access the Stargate?", answer == Answer.YES);
+	then 
+		question.setResult(new String[] {"Rheingold Beer", "Esslinger's Beer"});
+end
+
+
+rule "Do you know how to access the Stargate?NO"
+	when 
+		question: Question(content == "Do you know how to access the Stargate?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Are you doing that 'ironic' hipster thing?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Are you doing that 'ironic' hipster thing?YES"
+	when 
+		question: Question(content == "Are you doing that 'ironic' hipster thing?", answer == Answer.YES);
+	then 
+		question.setResult(new String[] {"Pabst Blue Ribbon"});
+end
+
+
+rule "Are you doing that 'ironic' hipster thing?NO"
+	when 
+		question: Question(content == "Are you doing that 'ironic' hipster thing?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Are you the designated driver?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Are you the designated driver?YES"
+	when 
+		question: Question(content == "Are you the designated driver?", answer == Answer.YES);
+	then 
+		question.setResult(new String[] {"O'doul's"});
+end
+
+
+rule "Are you the designated driver?NO"
+	when 
+		question: Question(content == "Are you the designated driver?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Are you at a tailgate or frat party?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Are you at a tailgate or frat party?YES"
+	when 
+		question: Question(content == "Are you at a tailgate or frat party?", answer == Answer.YES);
+	then 
+		Question newquestion = new Question("Is your wife nagging you about the beer gut?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Is your wife nagging you about the beer gut?YES"
+	when 
+		question: Question(content == "Is your wife nagging you about the beer gut?", answer == Answer.YES);
+	then 
+		question.setResult(new String[] {"Amstel Light", "Miller Lite", "Coors Light", "Budweiser"});
+end
+
+rule "Is your wife nagging you about the beer gut?NO"
+	when 
+		question: Question(content == "Is your wife nagging you about the beer gut?", answer == Answer.NO);
+	then 
+		question.setResult(new String[] {"Amstel Beer", "Miller High Life", "Coors", "Bud Light"});
+end
+
+
+rule "Are you at a tailgate or frat party?NO"
+	when 
+		question: Question(content == "Are you at a tailgate or frat party?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Is Guinness on tap?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Is Guinness on tap?YES"
+	when 
+		question: Question(content == "Is Guinness on tap?", answer == Answer.YES);
+	then 
+		question.setResult(new String[] {"Guinness"});
+end
+
+rule "Is Guinness on tap?NO"
+	when 
+		question: Question(content == "Is Guinness on tap?", answer == Answer.NO);
+	then
+		Question newquestion = new Question("Is it summer?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Is it summer?YES"
+	when 
+		question: Question(content == "Is it summer?", answer == Answer.YES);
+	then 
+		Question newquestion = new Question("Are you playing change?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Are you playing change?YES"
+	when 
+		question: Question(content == "Are you playing change?", answer == Answer.YES);
+	then 
+		question.setResult(new String[] {"Tequiza", "Modelo especial"});
+end
+
+rule "Are you playing change?NO"
+	when 
+		question: Question(content == "Are you playing change?", answer == Answer.NO);
+	then 
+		question.setResult(new String[] {"Corona Extra"});
+end
+
+rule "Is it summer?NO"
+	when 
+		question: Question(content == "Is it summer?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Can you speak fluent French, in Russian?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Can you speak fluent French, in Russian?YES"
+	when 
+		question: Question(content == "Is it summer?", answer == Answer.YES);
+	then 
+		question.setResult(new String[] {"Cerveza Dos Equis"});
+end
+
+rule "Can you speak fluent French, in Russian?NO"
+	when 
+		question: Question(content == "Is it summer?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Are you having a dinner party?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Are you having a dinner party?YES"
+	when 
+		question: Question(content == "Are you having a dinner party?", answer == Answer.YES);
+	then 
+		question.setResult(new String[] {"Blue Moon", "Samuel Adams" ,"New Belgium Brewing" ,"Gordon Biersch"});
+end
+
+rule "Are you having a dinner party?NO"
+	when 
+		question: Question(content == "Are you having a dinner party?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Did you just graduate college?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Did you just graduate college?YES"
+	when 
+		question: Question(content == "Did you just graduate college?", answer == Answer.YES);
+	then 
+		Question newquestion = new Question("...but did you move back in with your parents?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "...but did you move back in with your parents?YES"
+	when 
+		question: Question(content == "...but did you move back in with your parents?", answer == Answer.YES);
+	then 
+		question.setResult(new String[] {"Mickey's", "Old Milwaukee Beer", "Old English Brand '800' "});
+end
+
+rule "...but did you move back in with your parents?NO"
+	when 
+		question: Question(content == "...but did you move back in with your parents?", answer == Answer.NO);
+	then 
+		question.setResult(new String[] {"Heineken", "Beck's", "Rolling Rock Extra Pale"});
+end
+
+rule "Did you just graduate college?NO"
+	when 
+		question: Question(content == "Did you just graduate college?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Are you a Parrothead?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Are you a Parrothead?YES"
+	when 
+		question: Question(content == "Are you a Parrothead?", answer == Answer.YES);
+	then 
+		question.setResult(new String[] {"Landshark"});
+end
+
+rule "Are you a Parrothead?NO"
+	when 
+		question: Question(content == "Are you a Parrothead?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Are you trying to seem 'worldly'?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Are you trying to seem 'worldly'?YES"
+	when 
+		question: Question(content == "Are you trying to seem 'worldly'?", answer == Answer.YES);
+	then 
+		question.setResult(new String[] {"Foster's", "Red Stripe", "Carlsberg"});
+end
+
+rule "Are you trying to seem 'worldly'?NO"
+	when 
+		question: Question(content == "Are you trying to seem 'worldly'?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Did you bring in a reusable grocery bag?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Did you bring in a reusable grocery bag?YES"
+	when 
+		question: Question(content == "Did you bring in a reusable grocery bag?", answer == Answer.YES);
+	then 
+		question.setResult(new String[] {"Red Hook", "Sierra Nevada", "Harp Lager", "NewCastle Brown Ale", "Stella Artois"});
+end
+
+rule "Did you bring in a reusable grocery bag?NO"
+	when 
+		question: Question(content == "Did you bring in a reusable grocery bag?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Are you drunk?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Are you drunk?YES"
+	when 
+		question: Question(content == "Are you drunk?", answer == Answer.YES);
+	then 
+		question.setResult(new String[] {"Tecate", "Moosehead Lager"});
+end
+
+rule "Are you drunk?NO"
+	when 
+		question: Question(content == "Are you drunk?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Do you truly love beer?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Do you truly love beer?YES"
+	when 
+		question: Question(content == "Do you truly love beer?", answer == Answer.YES);
+	then 
+		Question newquestion = new Question("...$500 love?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Do you truly love beer?NO"
+	when 
+		question: Question(content == "Do you truly love beer?", answer == Answer.NO);
+	then 
+		question.setResult(new String[] {"Bass", "Michelob Ultra"});
+end
+
+rule "...$500 love?YES"
+	when 
+		question: Question(content == "...$500 love?", answer == Answer.YES);
+	then 
+		question.setResult(new String[] {"WTF is that?????"});
+end
+
+rule "...$500 love?NO"
+	when 
+		question: Question(content == "...$500 love?", answer == Answer.NO);
+	then 
+		question.setResult(new String[] {"Alaskan Amber", "Cantillon", "Ale Asylum", 
+										"Stone", "Full Sail", "Dogfish Head", 
+										"Hair Dog", "Double Diamond","Clipper City"});
+end
+
 
 
 
