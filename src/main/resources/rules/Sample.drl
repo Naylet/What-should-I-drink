@@ -1,0 +1,91 @@
+package com.sample
+ 
+import com.sample.DroolsTest.Question;
+import com.sample.DroolsTest.Answer;
+
+rule "Init"
+	when
+	then
+		Question question = new Question("Are you in Scotaland?");
+		question.ask();
+		insert(question);
+end
+
+rule "Are you in Scotaland?YES"
+	when 
+		question: Question(content == "Are you in Scotaland?", answer == Answer.YES);
+	then 
+		//BREW DOG
+end
+
+
+rule "Are you in Scotaland?NO"
+	when 
+		question: Question(content == "Are you in Scotaland?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Do you sleep in double-wide?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+
+rule "Do you sleep in double-wide?YES"
+	when 
+		question: Question(content == "Do you sleep in double-wide?", answer == Answer.YES);
+	then 
+		//Country Club Malt Liquor
+end
+
+
+rule "Do you sleep in double-wide?NO"
+	when 
+		question: Question(content == "Do you sleep in double-wide?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Are you Bob or Doug McKenzie?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Are you Bob or Doug McKenzie?YES"
+	when 
+		question: Question(content == "Are you Bob or Doug McKenzie?", answer == Answer.YES);
+	then 
+		//Elsinore
+end
+
+
+rule "Are you Bob or Doug McKenzie?NO"
+	when 
+		question: Question(content == "Are you Bob or Doug McKenzie?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Do you live in the projects?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+rule "Do you live in the projects?YES"
+	when 
+		question: Question(content == "Do you live in the projects?", answer == Answer.YES);
+	then 
+		//Steel Reserve
+end
+
+
+rule "Do you live in the projects?NO"
+	when 
+		question: Question(content == "Do you live in the projects?", answer == Answer.NO);
+	then 
+		Question newquestion = new Question("Are you a hockey fan eh?");
+		newquestion.ask();
+		insert(newquestion);
+end
+
+//DONE BY NOW
+
+
+
+
+
+
+		
+		
