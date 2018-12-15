@@ -15,11 +15,11 @@ rule "Are you in Scotaland?YES"
 	when 
 		question: Question(content == "Are you in Scotaland?", answer == Answer.YES);
 	then 
-		//BREW DOG
+		question.setResult(new String[] {"BREW DOG"});
 end
 
 
-rule "Are you in Scotaland?NO"
+rule "Are you in Scotaland?NO"	
 	when 
 		question: Question(content == "Are you in Scotaland?", answer == Answer.NO);
 	then 
@@ -33,6 +33,7 @@ rule "Do you sleep in double-wide?YES"
 	when 
 		question: Question(content == "Do you sleep in double-wide?", answer == Answer.YES);
 	then 
+		//question.setResult("Country Club Malt Liquor");
 		//Country Club Malt Liquor
 end
 

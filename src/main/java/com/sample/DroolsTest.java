@@ -40,8 +40,20 @@ public class DroolsTest {
         }
         
         public void ask() {
-        	if( gui.showQuestion(this.content) == "YES") this.answer = Answer.YES;
+        	String returnAnswer = gui.showQuestion(this.content); 
+        	//while(returnAnswer!="YES"||returnAnswer!="NO") {}
+        	
+        	if(returnAnswer == "YES") this.answer = Answer.YES;
         	else this.answer = Answer.NO;
+        	
+        	System.out.println("Given answer: " + this.answer);
+        }
+        
+        public void setResult(String[] results) {
+        	System.out.println("Result: ");
+        	for(int i=0; i<results.length; i++) System.out.println(results[i]);
+
+        	gui.showResult(results);
         }
         
     }
